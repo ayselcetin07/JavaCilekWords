@@ -20,7 +20,7 @@ public class Controller {
 
     public void fun_harfsil(ActionEvent event) throws Exception
     {
-        System.out.println("sadasdsa");
+        System.out.println("Aşkım Aysell Seni Seviyorum");
     }
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
