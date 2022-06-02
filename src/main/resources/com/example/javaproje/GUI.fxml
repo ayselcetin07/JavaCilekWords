@@ -13,7 +13,7 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffff; -fx-border-color: #f1b24b; -fx-border-image-width: 10px;">
          <children>
-            <Button fx:id="otomatikoyna" layoutX="176.0" layoutY="319.0" mnemonicParsing="false" onAction="#pressButton" style="-fx-background-radius: 50px;" text="Otomatik Oyna">
+            <Button fx:id="otomatikOyna" layoutX="176.0" layoutY="319.0" mnemonicParsing="false" onAction="#otomatikOyna" style="-fx-background-radius: 50px;" text="Otomatik Oyna">
                <font>
                   <Font size="14.0" />
                </font>
@@ -30,7 +30,7 @@
                   <Font name="Bell MT" size="32.0" />
                </font>
             </Label>
-            <Button layoutX="433.0" layoutY="319.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-background-radius: 50px;" text="Oyun Oluştur">
+            <Button fx:id="oyunOlustur" layoutX="433.0" layoutY="319.0" mnemonicParsing="false" onAction="#oyunOlustur" prefHeight="26.0" prefWidth="114.0" style="-fx-background-radius: 50px;" text="Oyun Oluştur">
                <font>
                   <Font size="14.0" />
                </font></Button>

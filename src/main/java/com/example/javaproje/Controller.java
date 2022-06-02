@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,11 +19,9 @@ public class Controller {
     @FXML
     public AnchorPane anchor1, anchor2;
     @FXML
-    public Button otomatikoyna, harfsil;
-    @FXML
     public TextField textfield;
     @FXML
-    public Button key1,key2,key3,key4,key5,key6,key7;
+    public Button key1,key2,key3,key4,key5,key6,key7,refresh,otomatikOyna,harfsil,oyunOlustur;
     //butona basıldığı zaman butonun textini textfield a yazdırdık
     //append yazınca birden fazla butonun textini yazdırabiliyoruz
     public void key1Yaz(ActionEvent event)throws Exception{
@@ -66,13 +65,31 @@ public class Controller {
       catch (Exception e){
           return;
     }
+    }
 
+    RandomHarf random = new RandomHarf();
+    //harfleri karıştırma
+    public void refresh(ActionEvent event) throws Exception{
 
+        //random.karistir();
+        key1.setText("A");
+        key2.setText("B");
+        key3.setText("C");
+        key4.setText("D");
+        key5.setText("C");
+        key6.setText("F");
     }
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
-    public void pressButton(ActionEvent event) throws Exception {
+    public void otomatikOyna(ActionEvent event) throws Exception {
         try {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Oyuna Hoşgeldiniz");
+            alert.setHeaderText("Bu oyunda harfler rastgele verilmiştir");
+            alert.setContentText(" Oyunun Kuralları \n Dört harften az kelime girmeyiniz. \n Bir harfi birden fazla kullanabilirsiniz." +
+                    " \n Ortadaki harfi kullanmak zorundasınız.\n Altıgenlerin içindeki harflerden başka harf kullanmayınız. ");
+            alert.showAndWait();
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GUI2.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
@@ -82,8 +99,37 @@ public class Controller {
         catch (Exception e) {
             e.printStackTrace();
         } finally {
-            ((Stage) otomatikoyna.getScene().getWindow()).close(); // OtomatikOyna butonuna basıldığında ilk açılan pencereyi kapatan kod.
+            ((Stage) otomatikOyna.getScene().getWindow()).close(); // OtomatikOyna butonuna basıldığında ilk açılan pencereyi kapatan kod.
         }
     }
-    //*** press button bittiği yer
+    //*** otomatikOyna bittiği yer
+
+    public void oyunOlustur(ActionEvent event) throws Exception
+    {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Oyuna Hoşgeldiniz");
+        alert.setHeaderText("Lütfen 7 harf giriniz.");
+        alert.setContentText(" Oyunun Kuralları \n Harfi girdikten sonra kontrol butonuna basınız.\n " +
+                "Harfleri tek tek giriniz.\n Her harf sadece bir kez girilebilir.\n  " +
+                "Dört harften az kelime girmeyiniz. \n Bir harfi birden fazla kullanabilirsiniz." +
+                "\n Ortadaki harfi kullanmak zorundasınız.\n Altıgenlerin içindeki harflerden başka harf kullanmayınız. ");
+        alert.showAndWait();
+
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GUI2.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            ((Stage) otomatikOyna.getScene().getWindow()).close(); // OtomatikOyna butonuna basıldığında ilk açılan pencereyi kapatan kod.
+        }
+
+    }
 }
