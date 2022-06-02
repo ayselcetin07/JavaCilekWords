@@ -71,13 +71,15 @@ public class Controller {
     //harfleri karıştırma
     public void refresh(ActionEvent event) throws Exception{
 
-        //random.karistir();
+        //random.karistir(); // random fonksiyonunn içinde çalışmıyor !
+
         key1.setText("A");
         key2.setText("B");
         key3.setText("C");
         key4.setText("D");
         key5.setText("C");
         key6.setText("F");
+
     }
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
