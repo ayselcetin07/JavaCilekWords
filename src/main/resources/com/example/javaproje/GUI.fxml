@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaproje.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffff; -fx-border-color: #f1b24b; -fx-border-image-width: 10px;">
+         <children>
+            <Button fx:id="otomatikoyna" layoutX="176.0" layoutY="319.0" mnemonicParsing="false" onAction="#pressButton" style="-fx-background-radius: 50px;" text="Otomatik Oyna">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+
+             <ImageView fitHeight="177.0" fitWidth="271.0" layoutX="280.0" layoutY="98.0" preserveRatio="true" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="85.0">
+                 <image>
+                     <Image url="@cilek.png" />
+
+                 </image>
+             </ImageView>
+            <Label layoutX="243.0" layoutY="38.0" style="-fx-background-color: #ffff;" text="Strawberry Words">
+               <font>
+                  <Font name="Bell MT" size="32.0" />
+               </font>
+            </Label>
+            <Button layoutX="433.0" layoutY="319.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-background-radius: 50px;" text="Oyun Oluştur">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children></AnchorPane>
+   </children>
+</VBox>
