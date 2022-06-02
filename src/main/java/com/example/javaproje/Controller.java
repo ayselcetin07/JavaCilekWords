@@ -21,8 +21,44 @@ public class Controller {
     public Button otomatikoyna, harfsil;
     @FXML
     public TextField textfield;
+    @FXML
+    public Button key1,key2,key3,key4,key5,key6,key7;
+    //butona basıldığı zaman butonun textini textfield a yazdırdık
+    //append yazınca birden fazla butonun textini yazdırabiliyoruz
+    public void key1Yaz(ActionEvent event)throws Exception{
 
-    public void fun_harfsil(ActionEvent event) throws Exception
+        textfield.appendText(key1.getText());
+
+    }
+    public void key2Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key2.getText());
+    }
+    public void key3Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key3.getText());
+    }
+    public void key4Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key4.getText());
+    }
+    public void key5Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key5.getText());
+    }
+    public void key6Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key6.getText());
+    }
+    public void key7Yaz(ActionEvent event) throws Exception{
+
+        textfield.appendText(key7.getText());
+    }
+
+
+
+
+    public void harfSil(ActionEvent event) throws Exception
     {
       try {
           textfield.setText(textfield.getText().substring(0, textfield.getText().length() - 1));

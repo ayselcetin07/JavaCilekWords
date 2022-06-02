@@ -12,7 +12,7 @@
                 <children>
                     <AnchorPane fx:id="anchor2" layoutX="4.0" layoutY="4.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffff;">
                         <children>
-                  <Button fx:id="harfsil" layoutX="251.0" layoutY="496.0" mnemonicParsing="false" onAction="#fun_harfsil" style="-fx-background-radius: 50px;" text=" Harf Sil">
+                  <Button fx:id="harfsil" layoutX="251.0" layoutY="496.0" mnemonicParsing="false" onAction="#harfSil" style="-fx-background-radius: 50px;" text=" Harf Sil">
                      <font>
                         <Font size="20.0" />
                      </font></Button>
@@ -65,32 +65,32 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                 <children>
-                                    <Button fx:id="key2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="D" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <Button fx:id="key6" mnemonicParsing="false" onAction="#key6Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="D" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: #ffe76a; -fx-border-color: #000000#000000;" text="H" textFill="#232121" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <Button fx:id="key7" mnemonicParsing="false" onAction="#key7Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: #ffe76a; -fx-border-color: #000000#000000;" text="H" textFill="#232121" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button fx:id="key1" cache="true" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="Z" textFill="#131212" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <Button fx:id="key1" cache="true" mnemonicParsing="false" onAction="#key1Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="Z" textFill="#131212" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font>
                                     </Button>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="G" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <Button fx:id="key5" mnemonicParsing="false" onAction="#key5Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="G" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="D" textFill="#080808" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <Button fx:id="key2" mnemonicParsing="false" onAction="#key2Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="D" textFill="#080808" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #191919;" text="C" textFill="#363535" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <Button fx:id="key3" mnemonicParsing="false" onAction="#key3Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #191919;" text="C" textFill="#363535" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="B" textFill="#151515" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                    <Button fx:id="key4" mnemonicParsing="false" onAction="#key4Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="B" textFill="#151515" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
@@ -102,7 +102,7 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="textfield" alignment="TOP_CENTER" layoutX="289.0" layoutY="88.0" prefHeight="39.0" prefWidth="239.0" text="AYŞE">
+                  <TextField fx:id="textfield" alignment="TOP_CENTER" layoutX="289.0" layoutY="88.0" prefHeight="39.0" prefWidth="239.0">
                      <font>
                         <Font size="20.0" />
                      </font>
