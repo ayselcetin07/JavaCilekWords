@@ -1,5 +1,6 @@
 package com.example.javaproje;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -17,10 +19,19 @@ public class Controller {
     public AnchorPane anchor1, anchor2;
     @FXML
     public Button otomatikoyna, harfsil;
+    @FXML
+    public TextField textfield;
 
     public void fun_harfsil(ActionEvent event) throws Exception
     {
-        System.out.println("dENEME");
+      try {
+          textfield.setText(textfield.getText().substring(0, textfield.getText().length() - 1));
+      }
+      catch (Exception e){
+          return;
+    }
+
+
     }
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
