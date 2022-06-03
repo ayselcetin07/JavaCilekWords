@@ -22,65 +22,6 @@ public class Controller {
     public TextField textfield;
     @FXML
     public Button key1,key2,key3,key4,key5,key6,key7,refresh,otomatikOyna,harfsil,oyunOlustur;
-    //butona basıldığı zaman butonun textini textfield a yazdırdık
-    //append yazınca birden fazla butonun textini yazdırabiliyoruz
-    public void key1Yaz(ActionEvent event)throws Exception{
-
-        textfield.appendText(key1.getText());
-
-    }
-    public void key2Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key2.getText());
-    }
-    public void key3Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key3.getText());
-    }
-    public void key4Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key4.getText());
-    }
-    public void key5Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key5.getText());
-    }
-    public void key6Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key6.getText());
-    }
-    public void key7Yaz(ActionEvent event) throws Exception{
-
-        textfield.appendText(key7.getText());
-    }
-
-
-
-
-    public void harfSil(ActionEvent event) throws Exception
-    {
-      try {
-          textfield.setText(textfield.getText().substring(0, textfield.getText().length() - 1));
-      }
-      catch (Exception e){
-          return;
-    }
-    }
-
-    RandomHarf random = new RandomHarf();
-    //harfleri karıştırma
-    public void refresh(ActionEvent event) throws Exception{
-
-        //random.karistir(); // random fonksiyonunn içinde çalışmıyor !
-
-        key1.setText("A");
-        key2.setText("B");
-        key3.setText("C");
-        key4.setText("D");
-        key5.setText("C");
-        key6.setText("F");
-
-    }
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
     public void otomatikOyna(ActionEvent event) throws Exception {

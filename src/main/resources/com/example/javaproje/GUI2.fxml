@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffd1e7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaproje.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ffd1e7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javaproje.Controller2">
         <children>
             <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                 <children>
@@ -82,7 +82,7 @@
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
-                                    <Button fx:id="key2" mnemonicParsing="false" onAction="#key2Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="D" textFill="#080808" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <Button fx:id="key2" mnemonicParsing="false" onAction="#key2Yaz" prefHeight="70.0" prefWidth="70.0" style="-fx-shape: &quot;M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1M 0 0 L 1 0 l 0.5 1 l -0.5 1 l -1 0 l -0.5 -1 l 0.5 -1&quot;; -fx-background-color: ff0000; -fx-border-color: #000000#000000;" text="a" textFill="#080808" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                         <font>
                                             <Font size="24.0" />
                                         </font></Button>
@@ -96,8 +96,8 @@
                                         </font></Button>
                                 </children>
                             </GridPane>
-                            <ScrollPane layoutX="14.0" layoutY="125.0" prefHeight="450.0" prefWidth="209.0" style="-fx-background-color: #F4F49E; -fx-border-color: #ffff;" />
-                              <Text layoutX="34.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulunan Kelimeler">
+                            <ScrollPane fx:id="kelimeListesi" layoutX="14.0" layoutY="137.0" prefHeight="438.0" prefWidth="210.0" style="-fx-background-color: #F4F49E; -fx-border-color: #ffff;" />
+                              <Text layoutX="38.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulunan Kelimeler">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -107,6 +107,7 @@
                         <Font size="20.0" />
                      </font>
                   </TextField>
+                  <ProgressBar fx:id="progressbar" layoutX="12.0" layoutY="101.0" prefHeight="18.0" prefWidth="210.0" progress="0.36" />
                         </children></AnchorPane>
                 </children>
             </AnchorPane>
