@@ -31,7 +31,7 @@
                         <Font name="Bell MT" size="32.0" />
                      </font>
                   </Label>
-                  <Button layoutX="479.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-radius: 50px;" text="Kontrol">
+                  <Button fx:id="kontrol" layoutX="479.0" layoutY="495.0" mnemonicParsing="false" onAction="#possibleWordsList" style="-fx-background-radius: 50px;" text="Kontrol">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

@@ -8,8 +8,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.*;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Controller2 {
+
     String alfabe = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
     String SesliHarfler = "AEIİOÖUÜ";
     String SessizHarfler = "BCÇDFGĞHJKLMNPRSŞTVYZ";
@@ -41,8 +46,9 @@ public class Controller2 {
     @FXML
     public ScrollPane kelimeListesi;
 
+
     //butona basıldığı zaman butonun textini textfield a yazdırdık
-    //append yazınca birden fazla butonun textini yazdırabiliyoruz
+    //append komutuyla birden fazla ifadeyi ekleyerek butonun textini yazdırabiliyoruz
     public void key1Yaz(ActionEvent event) throws Exception {
         textfield.appendText(key1.getText());
     }
@@ -77,6 +83,7 @@ public class Controller2 {
         textfield.appendText(key7.getText());
     }
 
+    //TextField içerisindeki yazılı olan harfleri siliyor.
     public void harfSil(ActionEvent event) throws Exception {
         try {
             textfield.setText(textfield.getText().substring(0, textfield.getText().length() - 1));
@@ -85,9 +92,8 @@ public class Controller2 {
         }
     }
 
-
+    // Rastgele harfleri oluşturup panagrama ekliyor.
     public void random() {
-
         java.util.Random indis = new java.util.Random();
         intbirinci = indis.nextInt(SesliHarfler.length());
         birinci = String.valueOf(SesliHarfler.charAt(intbirinci));
@@ -148,15 +154,14 @@ public class Controller2 {
         key5.setText(besinci);
         key6.setText(altinci);
         key7.setText(ortanca);
-
-
     }
 
+    // GUI2 Açıldığında random fonksiyonu çalışıyor.
     public void initialize() {
         random();
     }
 
-    //harfleri karıştırma
+    //harfleri karıştırma işlemini yapıyor.
     public void refresh(ActionEvent event) throws Exception {
 
         java.util.Random index = new java.util.Random();
@@ -166,7 +171,6 @@ public class Controller2 {
         int birinci_, ikinci_, ucuncu_, dorduncu_, besinci_, altıncı_;
 
         String birleşik = birinci + ikinci + ucuncu + dorduncu + besinci + altinci;
-
 
         birinci_ = index.nextInt(birleşik.length());
         yenibirinci = String.valueOf(birleşik.charAt(birinci_));
@@ -222,6 +226,113 @@ public class Controller2 {
         key4.setText(yenidorduncu);
         key5.setText(yenibesinci);
         key6.setText(yenialtinci);
+    }
+
+    //
+    ArrayList<String> possibleWord = new ArrayList<>();
+    ArrayList<String> tamListe = new ArrayList<>();
+    ArrayList<String> pangramKelimeler = new ArrayList<String>();
+    ArrayList<String> disindakiAlfabe = new ArrayList<String>();
+    ArrayList<String> word = new ArrayList<String>();
+
+    public void possibleWordsList(ActionEvent event) throws Exception
+    {
+
+
+
+        // DOSYA OKUMA
+        String line;
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src\\\\sozluk_v2.txt"), "UTF-8"));
+        while ((line = br.readLine()) != null) {
+            line = line.toUpperCase();
+            word.add(line);
+        }
+        br.close();
+
+        for (int s = 0; s < alfabe.length(); s++) {
+
+            if (birinci.equals(String.valueOf(alfabe.charAt(s))) |
+                    ikinci.equals(String.valueOf(alfabe.charAt(s))) |
+                    ucuncu.equals(String.valueOf(alfabe.charAt(s))) |
+                    dorduncu.equals(String.valueOf(alfabe.charAt(s))) |
+                    besinci.equals(String.valueOf(alfabe.charAt(s))) |
+                    altinci.equals(String.valueOf(alfabe.charAt(s))) |
+                    ortanca.equals(String.valueOf(alfabe.charAt(s)))) {
+
+            }
+            else {
+                disindakiAlfabe.add(String.valueOf(alfabe.charAt(s)));
+            }
+
+        }
+        for (String icerenKelime : word) {
+            if (icerenKelime.contains(birinci) |
+                    icerenKelime.contains(ikinci) |
+                    icerenKelime.contains(ucuncu) |
+                    icerenKelime.contains(dorduncu) |
+                    icerenKelime.contains(besinci) |
+                    icerenKelime.contains(altinci) |
+                    icerenKelime.contains(ortanca)) {
+
+                if (icerenKelime.contains(disindakiAlfabe.get(0)) |
+                        icerenKelime.contains(disindakiAlfabe.get(1)) |
+                        icerenKelime.contains(disindakiAlfabe.get(2)) |
+                        icerenKelime.contains(disindakiAlfabe.get(3)) |
+                        icerenKelime.contains(disindakiAlfabe.get(4)) |
+                        icerenKelime.contains(disindakiAlfabe.get(5)) |
+                        icerenKelime.contains(disindakiAlfabe.get(6)) |
+                        icerenKelime.contains(disindakiAlfabe.get(7)) |
+                        icerenKelime.contains(disindakiAlfabe.get(8)) |
+                        icerenKelime.contains(disindakiAlfabe.get(9)) |
+                        icerenKelime.contains(disindakiAlfabe.get(10)) |
+                        icerenKelime.contains(disindakiAlfabe.get(11)) |
+                        icerenKelime.contains(disindakiAlfabe.get(12)) |
+                        icerenKelime.contains(disindakiAlfabe.get(13)) |
+                        icerenKelime.contains(disindakiAlfabe.get(14)) |
+                        icerenKelime.contains(disindakiAlfabe.get(15)) |
+                        icerenKelime.contains(disindakiAlfabe.get(16)) |
+                        icerenKelime.contains(disindakiAlfabe.get(17)) |
+                        icerenKelime.contains(disindakiAlfabe.get(18)) |
+                        icerenKelime.contains(disindakiAlfabe.get(19)) |
+                        icerenKelime.contains(disindakiAlfabe.get(20)) |
+                        icerenKelime.contains(disindakiAlfabe.get(21))) {
+                }
+                else
+                {
+                    if (3 <= icerenKelime.length()) {
+                        possibleWord.add(icerenKelime);
+                    }
+                }
+
+            }
+        }
+        // Birinci kontrol (Random atılan harflerden oluşan kelimelerden en az biri pangram olmalıdır.)
+        while(pangramKelimeler.size() != 1) {
+            for (String pangram : possibleWord) {
+                if (pangram.contains(birinci) &&
+                        pangram.contains(ikinci) &&
+                        pangram.contains(ucuncu) &&
+                        pangram.contains(dorduncu) &&
+                        pangram.contains(besinci) &&
+                        pangram.contains(altinci) &&
+                        pangram.contains(ortanca)) {
+                    pangramKelimeler.add(pangram);
+                }
+            }
+        }
+
+
+        // SON KISIM
+        System.setOut(new PrintStream(System.out,true,"UTF-8"));
+
+        while (20 <= possibleWord.size()) {
+            tamListe = possibleWord;
+
+            System.out.println(tamListe);
+            System.out.println(pangramKelimeler.size());
+        }
+
+
     }
 }
 
