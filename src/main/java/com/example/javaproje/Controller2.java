@@ -199,12 +199,15 @@ public class Controller2 {
 
     public void initialize() {
 
-        while (true){
-            if (tamListe.size() != 0)
-
-                random();
+        while (tamListe.size() == 0){
+            random();
             possibleWordsList();
+            if (tamListe.size() != 0) {
+                break;
+            }
+
         }
+
 
     }
 
@@ -285,12 +288,11 @@ public class Controller2 {
 
         }
        // System.setOut(new PrintStream(System.out,true,"UTF-8"));
-        while (20 <= possibleWord.size() & pangramKelimeler.size() >= 1) {
+        if (20 <= possibleWord.size() & pangramKelimeler.size() >= 1) {
             tamListe = possibleWord;
             System.out.println(tamListe);
             System.out.println(tamListe.size());
             System.out.println(pangramKelimeler.size());
-            break;
         }
     }
 
