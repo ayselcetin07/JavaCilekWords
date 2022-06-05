@@ -10,28 +10,28 @@
         <children>
             <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                 <children>
-                    <AnchorPane fx:id="anchor2" layoutX="4.0" layoutY="4.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffff;">
+                    <AnchorPane fx:id="anchor2" layoutX="4.0" layoutY="4.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffff; -fx-border-color: 990000;">
                         <children>
                   <Button fx:id="harfsil" layoutX="251.0" layoutY="496.0" mnemonicParsing="false" onAction="#harfSil" style="-fx-background-radius: 50px;" text=" Harf Sil">
                      <font>
                         <Font size="20.0" />
                      </font></Button>
-                  <ImageView fitHeight="89.0" fitWidth="91.0" layoutX="584.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="76.0" fitWidth="70.0" layoutX="625.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@cilek.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="121.0" fitWidth="105.0" layoutX="657.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="89.0" fitWidth="88.0" layoutX="680.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@cilek.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="290.0" layoutY="14.0" text="Strawberry Words">
+                  <Label layoutX="287.0" layoutY="14.0" text="Strawberry Words">
                      <font>
                         <Font name="Bell MT" size="32.0" />
                      </font>
                   </Label>
-                  <Button fx:id="kontrol" layoutX="479.0" layoutY="495.0" mnemonicParsing="false" style="-fx-background-radius: 50px;" text="Kontrol">
+                  <Button fx:id="kontrol" layoutX="479.0" layoutY="495.0" mnemonicParsing="false" onAction="#girdiKontrol" style="-fx-background-radius: 50px;" text="Kontrol">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -96,18 +96,35 @@
                                         </font></Button>
                                 </children>
                             </GridPane>
-                            <ScrollPane fx:id="kelimeListesi" layoutX="14.0" layoutY="137.0" prefHeight="438.0" prefWidth="210.0" style="-fx-background-color: #F4F49E; -fx-border-color: #ffff;" />
-                              <Text layoutX="38.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulunan Kelimeler">
+                            <ScrollPane fx:id="kelimeListesi" layoutX="14.0" layoutY="137.0" prefHeight="401.0" prefWidth="210.0" style="-fx-background-color: #F4F49E; -fx-border-color: #ffff;">
+                     <content>
+                        <TextArea fx:id="textArea" prefHeight="396.0" prefWidth="188.0" />
+                     </content></ScrollPane>
+                              <Text layoutX="40.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bulunan Kelimeler">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="textfield" alignment="TOP_CENTER" layoutX="289.0" layoutY="88.0" prefHeight="39.0" prefWidth="239.0">
+                  <TextField fx:id="textfield" alignment="TOP_CENTER" layoutX="291.0" layoutY="79.0" prefHeight="39.0" prefWidth="239.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </TextField>
-                  <ProgressBar fx:id="progressbar" layoutX="12.0" layoutY="101.0" prefHeight="18.0" prefWidth="210.0" progress="0.36" />
+                  <ProgressBar fx:id="progressbar" layoutX="14.0" layoutY="101.0" prefHeight="18.0" prefWidth="210.0" progress="0.0" />
+                  <Pane layoutX="615.0" layoutY="188.0" opacity="0.65" prefHeight="149.0" prefWidth="159.0" style="-fx-background-color: #DCDCDC;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="55.0" prefWidth="140.0" style="-fx-background-color: FFE6E6; -fx-border-color: FF5D5D;" text="SKOR">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="skor" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="80.0" prefHeight="27.0" prefWidth="105.0" text="0">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                         </children></AnchorPane>
                 </children>
             </AnchorPane>

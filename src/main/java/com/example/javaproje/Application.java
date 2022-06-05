@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Application extends javafx.application.Application {
 
@@ -28,7 +29,7 @@ public class Application extends javafx.application.Application {
         String line;
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src\\\\sozluk_v2.txt"), "UTF-8"));
         while ((line = br.readLine()) != null) {
-            line = line.toUpperCase();
+            line = line.toUpperCase(new Locale("tr", "TR"));
             word.add(line);
         }
         br.close();

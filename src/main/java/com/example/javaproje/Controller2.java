@@ -1,12 +1,14 @@
 package com.example.javaproje;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.TilePane;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -40,17 +42,24 @@ public class Controller2 {
     int intaltinci = 0;
     int intortanca = 0;
 
+    public int puan = 0;
+    public double progress = 0.00f;
 
     @FXML
     public AnchorPane anchor1, anchor2;
     @FXML
     public TextField textfield;
     @FXML
+    public TextArea textArea;
+    @FXML
     public Button key1, key2, key3, key4, key5, key6, key7, refresh, otomatikOyna, harfsil, kontrol;
     @FXML
     public ProgressBar progressbar;
     @FXML
     public ScrollPane kelimeListesi;
+    @FXML
+    Label skor;
+
 
 
 
@@ -176,23 +185,13 @@ public class Controller2 {
 
         }
 
-        System.out.println("çalıştım");
-        System.out.println(birinci);
-        System.out.println(ikinci);
-        System.out.println(ucuncu);
-        System.out.println(dorduncu);
-        System.out.println(besinci);
-        System.out.println(altinci);
-        System.out.println(ortanca);
-
-        /*
         key1.setText(birinci);
         key2.setText(ikinci);
         key3.setText(ucuncu);
         key4.setText(dorduncu);
         key5.setText(besinci);
         key6.setText(altinci);
-        key7.setText(ortanca);*/
+        key7.setText(ortanca);
     }
 
     // GUI2 Açıldığında random fonksiyonu çalışıyor.
@@ -210,11 +209,11 @@ public class Controller2 {
 
 
     }
-
+    public ArrayList<String> pangramKelimeler = new ArrayList<String>();
     public void possibleWordsList()
     {
-         ArrayList<String> possibleWord = new ArrayList<>();
-         ArrayList<String> pangramKelimeler = new ArrayList<String>();
+        ArrayList<String> possibleWord = new ArrayList<>();
+
         ArrayList<String> disindakiAlfabe = new ArrayList<String>();
         for (int s = 0; s < alfabe.length(); s++) {
 
@@ -267,6 +266,7 @@ public class Controller2 {
                 {
                     if (3 <= icerenKelime.length()) {
                         possibleWord.add(icerenKelime);
+
                     }
                 }
 
@@ -287,12 +287,12 @@ public class Controller2 {
             }
 
         }
-       // System.setOut(new PrintStream(System.out,true,"UTF-8"));
+        // System.setOut(new PrintStream(System.out,true,"UTF-8"));
         if (20 <= possibleWord.size() & pangramKelimeler.size() >= 1) {
             tamListe = possibleWord;
             System.out.println(tamListe);
             System.out.println(tamListe.size());
-            System.out.println(pangramKelimeler.size());
+            System.out.println(pangramKelimeler);
         }
     }
 
@@ -363,9 +363,75 @@ public class Controller2 {
 
     }
 
+    public void girdiKontrol() {
+        String girdi; //GİRDİ ALINIR.
+        boolean Kontrol=false;
 
-    //
+        //Birinci kontrol (en az üç harften oluşmalı)
+        girdi = textfield.getText();
 
+        if (girdi.length() < 3) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("UYARI");
+            alert.setHeaderText("Kelimeyi 3 den az girmeyin!");
+            alert.show();
+        } else if (girdi.length() >= 3) {
+            //İkinci kontrol kelime ortanca harfi içermelidir.)
+            if (girdi.contains(ortanca)) // ortanca harf kontrolü
+            {
+                if ((girdi.contains(key1.getText()) |
+                        girdi.contains(key2.getText()) |
+                        girdi.contains(key3.getText()) |
+                        girdi.contains(key4.getText()) |
+                        girdi.contains(key5.getText()) |
+                        girdi.contains(key6.getText()) |
+                        girdi.contains(key7.getText()))) {
+                    for (String eslesen : tamListe) {
+                        if (girdi.equals(eslesen) ) //listedeki kelimeyi içeriyor mu?
+                        {
+                            for (String pangramKelimeMi : pangramKelimeler) {
+                                if (eslesen == pangramKelimeMi) {
+                                    puan += 10;
+                                    progress += 0.10;
+                                    skor.setText(String.valueOf(puan)); // kelimenin puanını label a ekliyor.
+                                    textArea.appendText(girdi + "\n"); // scrollpane içerisindeki text area ya bilinen kelimeyi yazıyor.
+                                    textfield.clear(); //text field içerisini temizliyor.
+                                    progressbar.setProgress(progress); // progress barı her doğru kelime bilindiğinde %0.10 ilerletiyor.
+                                    Kontrol=true;
+                                } else {
+                                    progress += girdi.length()/100;
+                                    puan += girdi.length();
+                                    skor.setText(String.valueOf(puan)); // kelimenin puanını label a ekliyor.
+                                    progressbar.setProgress(progress); // progress barı her doğru kelime bilindiğinde %0.10 ilerletiyor.
+                                    textArea.appendText(girdi + "\n"); // scrollpane içerisindeki text area ya bilinen kelimeyi yazıyor.
+                                    textfield.clear(); //text field içerisini temizliyor.
+                                    Kontrol=true;
+                                }
+                            }
+                        }
+
+                    }
+
+                    if(Kontrol==false){
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("UYARI");
+                        alert.setHeaderText("Böyle bir kelime yok.");
+                        alert.show();
+                    }
+                }
+
+            }
+
+            else
+            {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("UYARI");
+                alert.setHeaderText("Ortanca harfi kullanınız.");
+                alert.show();
+            }
+
+        }
+
+
+    }
 }
-
-
