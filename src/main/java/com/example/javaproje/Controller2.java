@@ -52,7 +52,7 @@ public class Controller2 {
     @FXML
     public TextArea textArea;
     @FXML
-    public Button key1, key2, key3, key4, key5, key6, key7, refresh, otomatikOyna, harfsil, kontrol;
+    public Button key1, key2, key3, key4, key5, key6, key7, refresh, otomatikOyna, harfsil, kontrol, kontrol2;
     @FXML
     public ProgressBar progressbar;
     @FXML
@@ -197,16 +197,13 @@ public class Controller2 {
     // GUI2 Açıldığında random fonksiyonu çalışıyor.
 
     public void initialize() {
-
         while (tamListe.size() == 0){
             random();
             possibleWordsList();
             if (tamListe.size() != 0) {
                 break;
             }
-
         }
-
 
     }
     public ArrayList<String> pangramKelimeler = new ArrayList<String>();
@@ -434,4 +431,5 @@ public class Controller2 {
 
 
     }
+
 }

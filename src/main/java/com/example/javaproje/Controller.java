@@ -15,13 +15,7 @@ import javafx.stage.Stage;
 
 public class Controller {
     @FXML
-    public Label welcomeText;
-    @FXML
-    public AnchorPane anchor1, anchor2;
-    @FXML
-    public TextField textfield;
-    @FXML
-    public Button key1,key2,key3,key4,key5,key6,key7,refresh,otomatikOyna,harfsil,oyunOlustur;
+    public Button otomatikOyna;
 
     //******** OtomatikOyna butonuna basıncaoyun penceresini açan kod ******//
     public void otomatikOyna(ActionEvent event) throws Exception {
@@ -38,6 +32,8 @@ public class Controller {
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
             stage.show();
+
+            //kontrol2.setVisible(false);
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -60,11 +56,13 @@ public class Controller {
 
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GUI2.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OyunOlustur.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
             stage.show();
+
+
         }
         catch (Exception e)
         {
